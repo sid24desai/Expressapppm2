@@ -20,8 +20,4 @@ LABEL name=client-development
 RUN npm i && npm cache clean --force
 CMD ["npm", "run", "dev"]
 
-# Production stage
-FROM base as production
-LABEL name=client-production
-COPY --from=base /home/site/wwwroot/server.sh /usr/local/bin/server.sh
-RUN chmod +x /usr/local/bin/server.sh
+
